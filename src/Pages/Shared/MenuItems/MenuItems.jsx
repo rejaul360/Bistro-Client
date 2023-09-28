@@ -25,7 +25,10 @@ const MenuItems = ({ item }) => {
 
 
 
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl " 
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            >
                 <figure>
                 <img
                     style={{ borderRadius: '0 150px 150px 150px' }}

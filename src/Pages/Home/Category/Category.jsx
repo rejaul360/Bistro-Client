@@ -46,11 +46,26 @@ const Category = () => {
                     modules={[Pagination]}
                     className="mySwiper mb-6"
                 >
-                    <SwiperSlide><img src={slide1} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Salads</h3></SwiperSlide>
-                    <SwiperSlide><img src={slide3} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Desserts</h3></SwiperSlide>
-                    <SwiperSlide><img src={slide4} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Soups</h3></SwiperSlide>
-                    <SwiperSlide><img src={slide5} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Salads</h3></SwiperSlide>
-                    <SwiperSlide><img src={slide2} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Pizza</h3></SwiperSlide>
+                    <SwiperSlide
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    ><img src={slide1} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Salads</h3></SwiperSlide>
+                    <SwiperSlide
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    ><img src={slide3} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Desserts</h3></SwiperSlide>
+                    <SwiperSlide
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    ><img src={slide4} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Soups</h3></SwiperSlide>
+                    <SwiperSlide
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    ><img src={slide5} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Salads</h3></SwiperSlide>
+                    <SwiperSlide
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    ><img src={slide2} alt="" /><h3 className='text-black font-bold uppercase md:text-4xl md:-mt-16'>Pizza</h3></SwiperSlide>
                 </Swiper>
             </div>
         </section>
