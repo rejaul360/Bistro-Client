@@ -21,7 +21,7 @@ const Menu = () => {
     const salad = menu.filter(item => item.category === 'salad');
     const offered = menu.filter(item => item.category === 'offered');
     return (
-        <div>
+        <div className="container mx-auto px-4">
             <Helmet>
                 <title>BISTRO BOSS | Menu</title>
             </Helmet>
@@ -29,6 +29,7 @@ const Menu = () => {
             <SectionTitle
                 subHeading="Don't miss"
                 heading="Todays Offerd"
+                className="text-2xl md:text-3xl lg:text-4xl"
             ></SectionTitle>
             {/* Offerd menu items */}
             <CategoryMenu item={offered}></CategoryMenu>
@@ -37,8 +38,8 @@ const Menu = () => {
             <CategoryMenu item={pizza} title='pizza' img={pizzaImg}></CategoryMenu>
             <CategoryMenu item={soup} title='Soup' img={soupImg}></CategoryMenu>
             <CategoryMenu item={salad} title='salad' img={saladImg}></CategoryMenu>
-
         </div>
+
     );
 };
 

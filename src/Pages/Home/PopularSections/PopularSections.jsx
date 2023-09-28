@@ -27,7 +27,7 @@ const PopularSections = () => {
                 heading="From Our Menu"
                 subHeading="Popular Items"
             ></SectionTitle>
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
                 {
                     popular.map(item => <MenuItems
                         key={item._id}
@@ -35,7 +35,7 @@ const PopularSections = () => {
                     ></MenuItems>)
                 }
             </div>
-            <Link to='/menu'><button className="btn btn-outline border-0 border-b-4 mt-4">View Full Menu</button></Link>
+            <Link to='/menu'><button className=" p-4 btn btn-outline border-0 border-b-4 mt-4">View Full Menu</button></Link>
             
         </section>
     );
