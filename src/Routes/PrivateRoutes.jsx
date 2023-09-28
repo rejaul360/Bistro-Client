@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import { PacmanLoader } from 'react-spinners';
 
@@ -10,7 +10,7 @@ const PrivateRoutes = ({ children }) => {
 
     if (loading) {
         return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <PacmanLoader color="#36d7b7" />
+         <span  style={{color:'#F000B8'}} className='md:text-3xl p-6 font-bold link link-hover '> <Link to='/login'>Please Login / Sing Up</Link></span>  <PacmanLoader color="#36d7b7" /> 
         </div>
     }
 

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 import { Rating } from "@smastrom/react-rating";
-import '@smastrom/react-rating/style.css'
+import '@smastrom/react-rating/style.css';
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
@@ -17,33 +18,36 @@ const Testimonials = () => {
         fetch('https://bistro-boss-server-murex.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, []);
+
     return (
         <section className="my-20">
-        <SectionTitle
-            subHeading="What Our Client Say"
-            heading={'Testimonials'}
-        ></SectionTitle>
+            <SectionTitle
+                subHeading="What Our Client Say"
+                heading={'Testimonials'}
+            ></SectionTitle>
 
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-
-            {
-                reviews.map(review => <SwiperSlide
-                    key={review._id}
-                >
-                    <div className="flex flex-col items-center mx-24 my-16">
-                        <Rating
-                            style={{ maxWidth: 180 }}
-                            value={review.rating}
-                            readOnly
-                        />
-                        <p className="py-8">{review.details}</p>
-                        <h3 className="text-2xl text-orange-400">{review.name}</h3>
-                    </div>
-                </SwiperSlide>)
-            }
-        </Swiper>
-    </section>
+            <Swiper
+                navigation={true}
+                modules={[Navigation, Autoplay]} // Add Autoplay module
+                autoplay={{ delay: 2000 }} // Autoplay with 2-second delay
+                className="mySwiper"
+            >
+                {reviews.map(review => (
+                    <SwiperSlide key={review._id}>
+                        <div className="flex flex-col items-center mx-24 my-16">
+                            <Rating
+                                style={{ maxWidth: 180 }}
+                                value={review.rating}
+                                readOnly
+                            />
+                            <p className="py-8">{review.details}</p>
+                            <h3 className="text-2xl text-orange-400">{review.name}</h3>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </section>
     );
 };
 

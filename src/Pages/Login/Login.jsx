@@ -74,25 +74,29 @@ const Login = () => {
             <Helmet>
                 <title>Bistro Boss | Login</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col md:flex-row-reverse">
-                    <div className="text-center md:w-1/2 lg:text-left w-1/2">
+            <div className=" min-h-screen w-auto bg-base-200">
+                <div className=" flex-col">
+                    <div className="text-center  ">
                         {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
-                        <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000" className='rounded-lg' alt="" />
+                        {/* <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000" className='rounded-lg' alt="" /> */}
+                        <div className="text-center ">
+                        <h1 className=" mb-6 text-2xl md:text-5xl  font-bold">Login now!</h1>
+                        {/* <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
                     </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                    </div>
+                    <div className="card w-full sm:p-4 md:w-1/2 mx-auto shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered focus:outline-none focus:border-secondary" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered focus:outline-none focus:border-secondary" />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -101,15 +105,15 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered" />
+                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered focus:outline-none focus:border-secondary" />
 
                             </div>
                             {/* ToDo; make button disable for captcha */}
                             <div className="form-control mt-6">
-                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
+                                <input  style={{backgroundColor:'#F000B8'}} disabled={false} className="btn" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='ml-8'><small>New Here? <Link to="/singup" className='text-red-600 font-bold '>Create an account</Link> </small></p>
+                        <p className='ml-8 text-xl'><> <Link to="/singup" > New Here? <span className='text-red-600 font-bold '> Create an account</span> </Link> </></p>
                         <SocialLogin></SocialLogin>
                     </div>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link, useLinkClickHandler } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProviders';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
 import useCart from '../../../Hooks/useCart';
 import useAdmin from '../../../Hooks/useAdmin';
 
@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* <Link><li className='text-white'><Link to="/dashboard/adminhome">Secret</Link></li></Link> */}
 
         {
-            isAdmin ?   <li className='text-white'><Link to='/dashboard/adminhome'>Dashboard</Link></li>
+            isAdmin  ?   <li className='text-white'><Link to='/dashboard/adminhome'>Dashboard</Link></li>
             :
             <li className='text-white'><Link to='/dashboard/userhome'>Dashboard</Link></li>
             
@@ -74,7 +74,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* <a className="btn btn-primary">Get started</a>n */}
+                <span>{user?.photoURL ?
+                        <div className="tooltip  tooltip-secondary tooltip-animated" data-tip={user?.displayName}>
+                            <img style={{ width: "50px", height: "50px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                        </div>
+                        :
+                        <FaUserCircle className='text-[25px] ml-4'></FaUserCircle>
+                    }</span>
                 </div>
             </div>
         </div>
